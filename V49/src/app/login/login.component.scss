@@ -1,0 +1,188 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styles */
+body {
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center; /* Centers the form horizontally */
+  align-items: center;     /* Centers the form vertically */
+  background: #f7f7f7;     /* Light background color */
+}
+
+/* Form Container */
+.form-container {
+  width: 100%;
+  max-width: 450px; /* Increased form width */
+  padding: 50px 40px; /* Increased padding */
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  opacity: 0;
+  transform: translateY(50px);
+  animation: popup 1.5s ease-in-out forwards; /* Popup animation */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Popup Animation */
+@keyframes popup {
+  0% {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Heading */
+.form-container h2 {
+  text-align: center;
+  font-size: 28px; /* Increased font size */
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 30px; /* Increased margin */
+}
+
+.form-container h2::before {
+  content: '';
+  display: block;
+  height: 4px;
+  width: 40px;
+  background: #4070f4;
+  margin: 10px auto 0;
+  border-radius: 4px;
+}
+
+/* Input Fields */
+.input-group {
+  position: relative;
+  margin-bottom: 25px; /* Increased margin between inputs */
+}
+
+.input-group label {
+  font-size: 16px; /* Increased font size */
+  font-weight: 600;
+  color: black;  /* Light black color for label */
+  position: absolute;
+  top: 50%;   /* Center label vertically */
+  left: 15px; /* Add some padding from the left side */
+  transform: translateY(-50%);
+  pointer-events: none; /* Prevents label from interfering with input */
+  transition: 0.3s ease-in-out;
+}
+
+.input-group input {
+  width: 100%;
+  height: 55px;  /* Increased input height */
+  padding: 0 20px;  /* Increased padding */
+  font-size: 18px;  /* Increased font size */
+  border: 1.5px solid #ccc;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  padding-left: 35px; /* Adds space for the label inside the input */
+  color: #555;  /* Light black text for input */
+}
+
+.input-group input:focus {
+  border-color: #4a90e2;
+  box-shadow: 0 0 5px rgba(64, 112, 244, 0.4);
+}
+
+.input-group input:focus + label,
+.input-group input:not(:placeholder-shown) + label {
+  top: -10px;
+  left: 15px;
+  font-size: 14px;  /* Slightly smaller font size for label when active */
+  color: #4a90e2;
+}
+
+/* Error Messages */
+.input-group div {
+  font-size: 14px;
+  color: #e74c3c;
+  margin-top: 5px;
+  display: none;
+}
+
+.input-group input.ng-touched.ng-invalid + div {
+  display: block;
+}
+
+/* Button Styling */
+button[type="submit"] {
+  width: 100%;
+  height: 55px;  /* Increased button height */
+  font-size: 18px;  /* Increased font size */
+  font-weight: 500;
+  color: #fff;
+  background: #4a90e2;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  margin-top: 20px;
+}
+
+button[type="submit"]:hover {
+  background: #1f63f4; /* Brighter blue on hover */
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+button[type="submit"]:disabled {
+  background: #b3c1f0;
+  cursor: not-allowed;
+}
+
+/* Error Message Display */
+.error-message {
+  font-size: 15px;
+  color: #e74c3c;
+  text-align: center;
+  margin-top: 10px;
+}
+
+/* Text Section (Already have an account?) */
+.alternate-option {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.alternate-option a {
+  color: #4a90e2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.alternate-option a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .form-container {
+    padding: 20px;
+    width: 90%;
+  }
+
+  .form-container h2 {
+    font-size: 24px;
+  }
+
+  .input-group input {
+    font-size: 16px;
+  }
+
+  button[type="submit"] {
+    font-size: 18px;
+  }
+}

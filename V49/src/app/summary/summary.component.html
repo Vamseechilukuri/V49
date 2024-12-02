@@ -1,0 +1,29 @@
+<div class="summary-container">
+  <!-- Chart Section -->
+  <div class="chart-container">
+    <!-- Material Selection Dropdown -->
+    <div class="dropdown-bar-container">
+      <div class="dropdown-container">
+        <label for="material">Select Material:</label>
+        <select id="material" [(ngModel)]="selectedMaterial" (change)="onMaterialChange(selectedMaterial)">
+          <option *ngFor="let material of materials" [value]="material">{{ material }}</option>
+        </select>
+      </div>
+    </div>
+
+    <!-- Bar Chart -->
+    <div class="chart">
+      <canvas id="summaryBarChart"></canvas>
+      <p>{{ chartDescription }}</p>
+    </div>
+
+    <!-- Pie Chart -->
+    <div class="chart">
+      <canvas id="summaryPieChart"></canvas>
+      <p>{{ chartDescription }}</p>
+    </div>
+  </div>
+  <h3>Technical Details</h3>
+  <p>{{techDetails}}</p>
+</div>
+

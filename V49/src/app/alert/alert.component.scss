@@ -1,0 +1,51 @@
+.alert-container {
+  position: fixed;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  width: 80%;
+  max-width: 500px;
+}
+
+.alert {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 20px;
+  margin: 5px 0;
+  border-radius: 5px;
+  color: white;
+  font-size: 16px;
+  animation: fadeInOut 4s ease-in-out;
+}
+
+/* Alert types */
+.alert.success {
+  background-color: #4caf50; /* Green */
+}
+
+.alert.error {
+  background-color: #f44336; /* Red */
+}
+
+.alert.info {
+  background-color: #2196f3; /* Blue */
+}
+
+/* Fade-in-out animation */
+@keyframes fadeInOut {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  10%,
+  90% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+}

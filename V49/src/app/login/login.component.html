@@ -1,0 +1,41 @@
+<div class="form-container">
+  <form (ngSubmit)="onSubmit()" [formGroup]="loginForm">
+    <h2>Sign In</h2>
+
+    <div class="input-group">
+      <label for="username"></label>
+      <input
+        id="username"
+        formControlName="username"
+        type="text"
+        placeholder="Enter your username"
+      />
+      <div *ngIf="loginForm.get('username')?.invalid && loginForm.get('username')?.touched" class="error">
+        Username is a mandatory field
+      </div>
+    </div>
+
+    <div class="input-group">
+      <label for="password"></label>
+      <input
+        id="password"
+        formControlName="password"
+        type="password"
+        placeholder="Enter your password"
+      />
+      <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched" class="error">
+        Password cannot be empty
+      </div>
+    </div>
+
+    <button type="submit" [disabled]="loginForm.invalid">Log In</button>
+
+    <div *ngIf="loginError" class="error-message">
+      Incorrect username or password. Please try again.
+    </div>
+
+    <p class="alternate-option">
+      Don't have an account?<a (click)="navigateToSignup()">Sign Up</a>
+    </p>
+  </form>
+</div>

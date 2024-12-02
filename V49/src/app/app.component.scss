@@ -1,0 +1,43 @@
+/* app.component.scss */
+
+/* Apply background for the entire page */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+}
+
+body {
+  background-image: url('../assets/cleanenergy.png'); /* Background image */
+  background-size: cover; /* Cover entire viewport */
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  min-height: 100vh; /* Ensure the body covers at least the viewport height */
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.55); /* Lighter effect */
+  filter: blur(6px); /* Blur intensity */
+  z-index: -1; /* Push the blur effect behind the content */
+}
+
+/* Exclude background on Summary and Reports pages */
+body.no-background {
+  background: none !important; /* Remove background image */
+}
+
+body.no-background::after {
+  background: none !important; /* Remove the blur effect */
+  filter: none !important; /* Remove the blur effect */
+}
+

@@ -1,0 +1,115 @@
+/* Container for the dropdown and bar chart aligned horizontally */
+.dropdown-bar-container {
+  display: flex;
+  justify-content: space-between; /* Space between dropdown and bar chart */
+  align-items: center; /* Align items vertically centered */
+  width: 100%;
+  margin-top: 30px; /* Add gap between navbar and container */
+  margin-bottom: 20px; /* Add space between the charts */
+  padding: 0 50px; /* Add padding for spacing */
+
+}
+
+/* Style for the dropdown */
+.dropdown-container {
+  display: flex;
+  flex-direction: column; /* Align the dropdown label and select vertically */
+  justify-content: center;
+  margin-bottom: 0; /* Remove margin-bottom as it's already in a flex container */
+}
+
+.summary-container h3 {
+  margin-top: 0.5rem;
+  font-size: 1.5rem;
+  color: #444;
+  text-align: center;
+}
+
+.summary-container p {
+  font-size: 14px; /* Set font size */
+  text-align: justify; /* Justify text for better readability */
+  line-height: 1.6; /* Improve readability with better line spacing */
+  margin-bottom: 1rem; /* Add spacing between paragraphs */
+}
+
+/* Style the dropdown label and select */
+label {
+  margin-right: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+
+select {
+  padding: 8px 16px;
+  font-size: 16px;
+  cursor: pointer;
+  border: 2px solid #5c6bc0;
+  border-radius: 4px;
+  background-color: #3c3f58;
+  color: #fff;
+  transition: all 0.3s ease; /* Smooth transition for hover/focus */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Soft shadow for input field */
+}
+
+/* Hover and focus effects on select */
+select:hover, select:focus {
+  border-color: #ffeba7;
+  outline: none;
+  box-shadow: 0 0 10px rgba(255, 235, 167, 0.4); /* Glow effect on hover/focus */
+}
+
+/* Center the chart containers and set their width and height to 40% of the page */
+.chart-container {
+  position: relative;
+  width: 40%; /* Set the width to 40% of the page */
+  height: 40%; /* Set the height to 40% of the page */
+  margin: 0 auto; /* Center horizontally */
+  margin-bottom: 20px; /* Space between charts */
+}
+
+/* Style the bar chart canvas */
+#summaryBarChart {
+  width: 100%; /* Make it fill the container width */
+  height: 100%; /* Make it fill the container height */
+  border-radius: 8px; /* Rounded corners for the chart */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+}
+
+/* Style the pie chart canvas */
+#summaryPieChart {
+  width: 100%; /* Make it fill the container width */
+  height: 100%; /* Make it fill the container height */
+  border-radius: 8px; /* Rounded corners for the chart */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for a modern look */
+}
+
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .dropdown-bar-container {
+    flex-direction: column; /* Stack them vertically on smaller screens */
+    align-items: center; /* Center align them */
+  }
+
+  .chart-container {
+    width: 80%; /* Increase width on smaller screens */
+    height: 50%; /* Adjust height on smaller screens */
+  }
+
+  .dropdown-container {
+    width: 80%; /* Make the dropdown container more prominent */
+  }
+
+  canvas {
+    height: 250px;
+  }
+
+  .technical-details h3 {
+    font-size: 1.5rem;
+  }
+
+  .technical-details p {
+    font-size: 1rem;
+  }
+}
+

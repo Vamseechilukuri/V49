@@ -8,6 +8,8 @@ const bcrypt = require('bcryptjs'); // Updated to bcryptjs
 
 // Initialize environment variables
 dotenv.config();
+require('dotenv').config();
+
 
 const app = express();
 const port = 3000;
@@ -20,11 +22,11 @@ app.use(bodyParser.json());
 
 // MySQL Database connection
 const db = mysql.createConnection({
-  host: 'cleanenergy1.c1aa22q08u4i.us-east-2.rds.amazonaws.com',
-  user: 'root',
-  password: 'rootroot',
-  database: 'cleanenergy',
-  port: 3306,
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
+  port: process.env.DB_PORT,
 });
 
 // Connect to MySQL database

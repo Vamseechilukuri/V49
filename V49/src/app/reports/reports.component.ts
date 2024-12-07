@@ -12,7 +12,7 @@ export class ReportsComponent implements OnInit {
   chartData: any[] = []; // Holds the fetched data
 
   // Define the API URL for fetching reports data
-  private apiUrl = 'http://localhost:3000/api/reports-chart'; // Replace with your backend URL
+  private apiUrl = 'http://104.131.166.122:3000/api/reports-chart'; // Replace with your backend URL
 
   constructor(private http: HttpClient) {}
 

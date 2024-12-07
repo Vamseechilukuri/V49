@@ -37,7 +37,7 @@ export class SummaryComponent implements AfterViewInit, OnDestroy {
   }
 
   loadChart(material: string) {
-    this.http.get(`http://localhost:3000/api/summary-chart?material=${material}`).subscribe((data: any) => {
+    this.http.get(`http://104.131.166.122:3000/api/summary-chart?material=${material}`).subscribe((data: any) => {
       // Destroy previous chart instance if exists
       if (this.chartInstance) {
         this.chartInstance.destroy();

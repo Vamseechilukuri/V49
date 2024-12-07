@@ -9,7 +9,7 @@ import { Router } from '@angular/router';
   providedIn: 'root',
 })
 export class AuthService {
-  private readonly apiUrl = 'http://localhost:3000'; // Base URL of the backend API
+  private readonly apiUrl = 'http://104.131.166.122:3000'; // Base URL of the backend API
 
   constructor(private http: HttpClient, private alertService: AlertService, private router: Router) {} // Inject AlertService
 
